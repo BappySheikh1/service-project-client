@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceCard = ({service}) => {
+const ServiceCardSummary = ({service}) => {
     const {title,description,image,price,rating,_id}=service
     // console.log(service);
     return (
@@ -31,4 +31,4 @@ const ServiceCard = ({service}) => {
     );
 };
 
-export default ServiceCard;
+export default ServiceCardSummary;

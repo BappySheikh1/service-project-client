@@ -1,7 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Banner from "./Banner/Banner";
 import ServiceCard from './ServiceCard/ServiceCard';
+
+
 
 const Home = () => {
     const services=useLoaderData()
@@ -14,8 +16,8 @@ const Home = () => {
                 services.map((service) => <ServiceCard key={service._id} service={service}/>)
                }
             </div>
-            <div className='text-center'>
-            <button className="btn btn-outline btn-secondary font-bold "> See All </button>
+            <div className='text-center mb-11'>
+           <Link to='/services'><button className="btn btn-outline btn-secondary font-bold "> See All  </button></Link> 
             </div>
         </div>
     );
