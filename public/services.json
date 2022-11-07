@@ -1,0 +1,98 @@
+[
+    {
+      "title": "Elephants drinking watert",
+      "image": "https://i.ibb.co/FWhgX0w/elephants-drinking-water.jpg",
+      "rating": {
+        "number": 4.5,
+        "badge": "Excellent"
+      },
+      "total_view": 488,
+      "author": {
+        "name": "Frans van Heerden",
+        "published_date": "2022-08-24 17:27:34",
+        "img": ""
+      },
+      "price": 1000,
+      "description": "Elephants, unlike people, do use their trunks to help them drink, but they only suck the water part of the way up and then use their trunks to squirt the water into their mouths. The elephant's trunk is a combination of their nose and upper lip and is able to touch, grasp and smellroximately ."
+    },
+    {
+      "title": "Zebra under the blue sky",
+      "image": "https://i.ibb.co/pfZqhpW/field-covered-greenery-surrounded-by-zebras-sunlight-blue-sky.jpg",
+      "rating": {
+        "number": 4.7,
+        "badge": "Excellent"
+      },
+      "total_view": 488,
+      "author": {
+        "name": "Frans van Heerden",
+        "published_date": "2022-08-24 17:27:34",
+        "img": ""
+      },
+      "price": 1400,
+      "description": "Zebras have black fur with white stripes and predominantly white bellies. Their feet are capped with a singular, hard hoof, which packs a punch when kicked at predators. They have large, rounded ears with lots of hair to keep dust out of them. Their tail has long, black hair that begins approximately midway down the tail, while the top is striped.bra. "
+    },
+    {
+      "title": " lions laying on the sand and resting",
+      "image": "https://i.ibb.co/sm8yF3c/male-female-lions-laying-sand-resting.jpg",
+      "rating": {
+        "number": 4.6,
+        "badge": "Excellent"
+      },
+      "total_view": 488,
+      "author": {
+        "name": "Frans van Heerden",
+        "published_date": "2022-08-24 17:27:34",
+        "img": ""
+      },
+      "price": 1300,
+      "description": "Lions have strong, compact bodies and powerful forelegs, teeth and jaws for pulling down and killing prey. Their coats are yellow-gold, and adult males have shaggy manes that range in color from blond to reddish-brown to black. The length and color of a lion's mane is likely determined by age, genetics and hormones. "
+    },
+    {
+      "title": "African white rhinos in the savannah",
+      "image": "https://i.ibb.co/L8CpnxD/african-white-rhinos-savannah.jpg",
+      "rating": {
+        "number": 4.3,
+        "badge": "Excellent"
+      },
+      "total_view": 488,
+      "author": {
+        "name": "Frans van Heerden",
+        "published_date": "2022-08-24 17:27:34",
+        "img": ""
+      },
+      "price": 1200,
+      "description": "They weigh approximately 1000 to 3600 kg as adults. White rhinoceroses have relatively small eyes compared to their body size, squared-shaped lips, and a long neck with a hump. They have two horns of unequal size. The recorded length of longer horns is 1660 mm in length. "
+    },
+    {
+      "title": "Bird standing on a gazelle face",
+      "image": "https://i.ibb.co/x14DGHg/bird-standing-gazelle-face.jpg",
+      "rating": {
+        "number": 4.9,
+        "badge": "Excellent"
+      },
+      "total_view": 488,
+      "author": {
+        "name": "Frans van Heerden",
+        "published_date": "2022-08-24 17:27:34",
+        "img": ""
+      },
+      "price": 1500,
+      "description": "All deer species have antlers, except for the Chinese water deer. Only males have antlers, except for caribou (reindeer). Both male and female caribou have antlers. Antlers grow from boney supporting structures called pedicels, according to ADW. They are covered in velvet, which is rich in nerves and blood vessels. When the antlers are fully grown, the velvet dies and the deer will rub it off against a tree or other vegetation.  "
+    },
+    {
+      "title": "Bengal tiger in the nature",
+      "image": "https://i.ibb.co/xjNFBrV/amazing-bengal-tiger-nature.jpg",
+      "rating": {
+        "number": 4.9,
+        "badge": "Excellent"
+      },
+      "total_view": 488,
+      "author": {
+        "name": "Frans van Heerden",
+        "published_date": "2022-08-24 17:27:34",
+        "img": ""
+      },
+      "price": 1700,
+      "description": "The Bengal tiger's coat is yellow to light orange, with stripes ranging from dark brown to black; the belly and the interior parts of the limbs are white, and the tail is orange with black rings. "
+    }
+  ]

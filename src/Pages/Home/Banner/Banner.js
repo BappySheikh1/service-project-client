@@ -3,8 +3,7 @@ import img1 from '../../../assets/banner/1.jpg'
 import img2 from '../../../assets/banner/2.jpg'
 import img3 from '../../../assets/banner/3.jpg'
 import img4 from '../../../assets/banner/4.jpg'
-import img5 from '../../../assets/banner/5.jpg'
-import img6 from '../../../assets/banner/6.jpg'
+
 
 const Banner = () => {
     return (
