@@ -52,7 +52,10 @@ const Header = () => {
  </ul>
 </div>
 <div className="navbar-end">
-<button className="btn btn-warning ">Register</button>
+    <Link to='/register'>
+    <button className="btn btn-warning ">Register</button>
+    </Link>
+
 </div>
 </div>
      </div>
