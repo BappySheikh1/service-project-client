@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import logo from "../../../assets/login.svg"
 
 const Login = () => {
     const {logInUser,userForgetPassword}=useContext(AuthContext)
@@ -22,7 +23,6 @@ const Login = () => {
             const user=result.user
             console.log(user);
             form.reset();
-            handleUserEmailForget();
             navigate(from, { replace: true });
         })
         .catch(err =>{
@@ -45,8 +45,43 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h1>This is login page</h1>
+        <div className="hero w-full my-20">
+  <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
+    <div className="text-center lg:text-left">
+     <img src={logo} className='w-3/4' alt="" />
+      
+    </div>
+    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <h1 className="text-5xl font-bold text-center">Login!</h1>
+      <form onSubmit={handleSubmit} className="card-body">
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Email</span>
+           </label>
+          <input type="text" onBlur={handleOnBlurEmail} placeholder="email" name='email' className="input input-bordered" required/>
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Password</span>
+          </label>
+          <input type="password" placeholder="password" name='password' className="input input-bordered" required/>
+          <label className="label">
+            <Link onClick={handleUserEmailForget} className="label-text-alt link link-hover">Forgot password?</Link>
+          </label>
+        </div>
+        <p className='text-red-600'>{error}</p>
+        <div className="form-control mt-6">
+            <input className="btn btn-primary" type="submit" value='Login' />
+        </div>
+      </form>
+      <div className='text-center my-5'>
+               <p className='text-xl mb-3'>Or Sign Up with</p>
+                 <button className='btn btn-primary text-white font-semibold mr-2'>Google Log In</button>
+                 <p className='p-5'>New to photo service <Link className='text-orange-600 font-bold text-center ' to='/register'>Sign Up</Link></p>
+            </div>
+      {/* <SocialLogIn /> */}
+    </div>
+  </div>
         </div>
     );
 };
