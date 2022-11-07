@@ -17,7 +17,7 @@ const ServiceCard = ({service}) => {
     <p className='text-xl f'>
     {
             description?.length > 100 ?
-            <>{description?.slice(0,100) + '...'}<Link to={`/service/${_id}`} className='text-xl font-bold text-blue-400'>Read More</Link></>
+            <>{description?.slice(0,100) + '...'}<Link to={`/detailspage/${_id}`} className='text-xl font-bold text-blue-400'>Read More</Link></>
             :
             <>{description}</>
             }    

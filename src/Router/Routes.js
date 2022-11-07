@@ -16,7 +16,7 @@ export const router=createBrowserRouter([
          children:[
             {
                 path:'/',
-                loader:()=>fetch('services.json'),
+                loader:()=>fetch('http://localhost:4000/services/limit'),
                 element: <Home />
             },
             {
@@ -41,11 +41,12 @@ export const router=createBrowserRouter([
             },
             {
                 path:'/services',
-                loader:()=>fetch('services.json'),
+                loader:()=>fetch(`http://localhost:4000/services`),
                 element: <Services />
             },
             {
                 path:'/detailspage/:id',
+                loader:({params})=>fetch(`http://localhost:4000/services/${params.id}`),
                 element: <DetailsPage />
             }
          ]
