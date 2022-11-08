@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Contexts/AuthProvider';
 import MyReviewCard from './MyReviewCrad/MyReviewCard';
 
 const MyReview = () => {
    const [reviewer,setReviewer]=useState([])
+   const {user}=useContext(AuthContext)
+
    useEffect(()=>{
-    fetch('http://localhost:4000/review')
+    fetch(`http://localhost:4000/review?email=${user?.email}`)
     .then(res => res.json())
     .then(data => {
         setReviewer(data)
     })
-   },[])
+   },[user?.email])
 
     return (
         <div>
