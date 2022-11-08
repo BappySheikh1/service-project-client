@@ -36,6 +36,7 @@ const AuthProvider = ({children}) => {
     }
 
     const userLogOut=()=>{
+        localStorage.removeItem('JWTtoken')
         return signOut(auth)
     }
   
