@@ -25,6 +25,9 @@ const MyReview = () => {
         setReviewer(data)
     })
    },[user?.email,userLogOut])
+  
+// Array reverse added
+   const reverseArray =[...reviewer].reverse()
 
     return (
         <div>
@@ -34,7 +37,7 @@ const MyReview = () => {
             }
             <div className='grid md:grid-cols-2 grid-cols-1 gap-6 my-20 mx-20'>
             {
-                reviewer.map(review => <MyReviewCard key={review._id} review={review} setReviewer={setReviewer} reviewer={reviewer}/>)
+                reverseArray.map(review => <MyReviewCard key={review._id} review={review} setReviewer={setReviewer} reviewer={reviewer}/>)
             }
             </div>
         </div>

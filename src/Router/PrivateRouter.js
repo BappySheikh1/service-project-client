@@ -7,7 +7,7 @@ const PrivateRouter = ({children}) => {
     const location =useLocation()
 
     if(loading){
-        return <p>Loading...........</p>
+        return <button className="btn loading">loading</button>
     }
 
     if(!user){
