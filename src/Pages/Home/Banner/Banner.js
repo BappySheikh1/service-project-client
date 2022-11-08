@@ -22,8 +22,8 @@ const Banner = () => {
     </div>
 
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide4" className="btn btn-circle">❮</a> 
-      <a href="#slide2" className="btn btn-circle">❯</a>
+      <a href="#slide4" className="btn btn-circle border-none bg-green-600 hover:bg-green-900 ">❮</a> 
+      <a href="#slide2" className="btn btn-circle border-none bg-red-600 hover:bg-red-800">❯</a>
     </div>
   </div> 
 
@@ -38,8 +38,8 @@ const Banner = () => {
    </h3>
 </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide1" className="btn btn-circle">❮</a> 
-      <a href="#slide3" className="btn btn-circle">❯</a>
+      <a href="#slide1" className="btn btn-circle border-none bg-green-600 hover:bg-green-900">❮</a> 
+      <a href="#slide3" className="btn btn-circle border-none bg-red-600 hover:bg-red-800">❯</a>
     </div>
   </div> 
 
@@ -54,8 +54,8 @@ const Banner = () => {
    </h3>
 </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide2" className="btn btn-circle">❮</a> 
-      <a href="#slide4" className="btn btn-circle">❯</a>
+      <a href="#slide2" className="btn btn-circle border-none bg-green-600 hover:bg-green-900">❮</a> 
+      <a href="#slide4" className="btn btn-circle border-none bg-red-600 hover:bg-red-800">❯</a>
     </div>
   </div> 
 
@@ -70,12 +70,12 @@ const Banner = () => {
           </h3>
     </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide3" className="btn btn-circle">❮</a> 
-      <a href="#slide1" className="btn btn-circle">❯</a>
+      <a href="#slide3" className="btn btn-circle border-none bg-green-600 hover:bg-green-900">❮</a> 
+      <a href="#slide1" className="btn btn-circle border-none bg-red-600 hover:bg-red-800">❯</a>
     </div>
   </div>
 
-   </div>
+           </div>
         </div>
     );
 };

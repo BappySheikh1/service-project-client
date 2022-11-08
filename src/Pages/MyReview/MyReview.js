@@ -4,15 +4,20 @@ import MyReviewCard from './MyReviewCrad/MyReviewCard';
 
 const MyReview = () => {
    const [reviewer,setReviewer]=useState([])
-   const {user}=useContext(AuthContext)
+   const {user,userLogOut}=useContext(AuthContext)
 
    useEffect(()=>{
     fetch(`http://localhost:4000/review?email=${user?.email}`)
-    .then(res => res.json())
+    .then(res => {
+        if(res.status === 401 || res.status === 403){
+            return userLogOut()
+        }
+        return  res.json()
+    })
     .then(data => {
         setReviewer(data)
     })
-   },[user?.email])
+   },[user?.email,userLogOut])
 
     return (
         <div>

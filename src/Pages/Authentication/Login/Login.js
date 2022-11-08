@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { json, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import logo from "../../../assets/login.svg"
 
@@ -23,7 +23,7 @@ const Login = () => {
             const user=result.user
             console.log(user);
             form.reset();
-            navigate(from, { replace: true });
+              navigate(from, { replace: true });
         })
         .catch(err =>{
             console.log(err);
