@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const ReviewPage = ({image}) => {
@@ -10,6 +11,9 @@ const ReviewPage = ({image}) => {
         const name =`${form.firstName.value} ${form.lastName.value}`
         const email= user?.email || 'Unregisterd' ;
         const rating =form.rating.value;
+        if(isNaN(rating)){
+          return toast.error('please provide a number in rating field',{autoClose: 500})
+        }
         const photoURL =form.photoURL.value;
         const message =form.message.value;
 
@@ -32,7 +36,7 @@ const ReviewPage = ({image}) => {
       .then(data => {
         console.log(data);
         if(data.acknowledged){
-            alert('Review is successful')
+            toast.success('Review is successfully added',{autoClose: 500})
         }
       })
     }

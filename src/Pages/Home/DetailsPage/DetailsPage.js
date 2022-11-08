@@ -3,6 +3,8 @@ import { Link, useLoaderData } from 'react-router-dom';
 import {AuthContext} from '../../../Contexts/AuthProvider'
 import useTitle from '../../../Hooks/useTitle';
 import ReviewPage from './ReviewPage';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const DetailsPage = () => {
     useTitle('Details')
@@ -11,20 +13,25 @@ const DetailsPage = () => {
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl my-10">
-  <figure><img src={image} className='h-full w-full' alt=""/></figure>
-  <div className="card-body">
-    <h2 className="card-title font-bold">{title}</h2>
-    <p className='text-lg'>{description}</p>
-    <br />
-    <div className='flex justify-between items-center'>
-       <p className="text-lg font-bold">Price: ${price}</p>
-       <p className="text-lg font-bold">Rating: ${rating.number}</p>
-
-    </div>
-    <div className="card-actions justify-end">
-     <Link to='/services'><button className="btn btn-primary">Go To Services page</button> </Link> 
-    </div>
-  </div>
+                <PhotoProvider>
+                    <PhotoView src={image}>
+                    <figure><img src={image} className='h-full w-full' alt=""/></figure>
+                    </PhotoView>
+                </PhotoProvider>
+  
+                <div className="card-body">
+                    <h2 className="card-title font-bold">{title}</h2>
+                     <p className='text-lg'>{description}</p>
+                     <br />
+                  <div className='flex justify-between items-center'>
+                     <p className="text-lg font-bold">Price: ${price}</p>
+                     <p className="text-lg font-bold">Rating: ${rating.number}</p>
+              
+                  </div>
+                   <div className="card-actions justify-end">
+                     <Link to='/services'><button className="btn btn-primary">Go To Services page</button> </Link> 
+                 </div>
+                </div>
             </div>
                {/* User Review */}
             <section>

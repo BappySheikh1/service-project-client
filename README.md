@@ -6,7 +6,7 @@ This Site Is Services Platfrom!
 Hosted in Firebase -> [Wildzy]()
 
 ## Authentication 
-Firebase Authentication ->[Link]() 
+Firebase Authentication ->[Link](https://firebase.google.com/?gclid=CIKapKmQn_sCFU_J1AodQE4NGQ&gclsrc=ds) 
 
 ## Context API
 Documentation Link[api] -> [Link]()
@@ -19,10 +19,10 @@ Documentation Link[react-router] -> [Link](https://reactrouter.com/en/main/start
 ## Resources 
 Vanilla CSS Components->
 Daisy UI Components->[daisy_iu](https://daisyui.com/)
-Tailwind Css Components -> 
-[Tailwind](https://tailwindcss.com/)
+Tailwind Css Components ->[Tailwind](https://tailwindcss.com/)
 
 ## Others Link
 React Icon ->[Link](https://react-icons.github.io/react-icons/)
 react toastify ->[Link](https://www.npmjs.com/package/react-toastify)
 Lottie react ->[Link](https://www.npmjs.com/package/lottie-react)
+react-photo-view ->[Link](https://www.npmjs.com/package/react-photo-view)

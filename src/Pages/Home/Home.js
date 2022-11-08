@@ -5,7 +5,7 @@ import ContractUs from './Contract/ContractUs';
 import ServiceCard from './ServiceCard/ServiceCard';
 import {  FaArrowRight } from 'react-icons/fa';
 import BestCollection from './BestCollection/BestCollection';
-import useTitle from '../../Hooks/useTitle'
+import useTitle from '../../Hooks/useTitle';
 
 
 
