@@ -1,49 +1,21 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../../Contexts/AuthProvider';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
-const ReviewPage = ({image}) => {
-    const {user}=useContext(AuthContext)
-   
-    const handleReviewPage=event=>{
-        event.preventDefault();
-        const form =event.target
-        const name =`${form.firstName.value} ${form.lastName.value}`
-        const email= user?.email || 'Unregisterd' ;
-        const rating =form.rating.value;
-        const photoURL =form.photoURL.value;
-        const message =form.message.value;
+const UpdateReview = () => {
+    const{user}=useContext(AuthContext)
+    const handleUpdateReview=()=>{
 
-      console.log(name,email,rating ,message);
-      const userInformation={
-        user_name: name,
-        email : email,
-        rating : rating ,
-        description: message,
-        image: photoURL
-      }
-      fetch('http://localhost:4000/review',{
-        method:'POST',
-        headers:{
-            "content-type":'application/json'
-        },
-        body: JSON.stringify(userInformation)
-      })
-      .then(res =>res.json())
-      .then(data => {
-        console.log(data);
-        if(data.acknowledged){
-            alert('Review is successful')
-        }
-      })
     }
-
+    
     return (
         <div className='my-5'>
             <div className=''>
-                <img src={image} alt="" className='w-full rounded-md h-[400px] mb-32'/>
+                <img src='' alt="" className='w-full rounded-md h-[400px] mb-32'/>
             </div>
             
-           <form onSubmit={handleReviewPage}>
+           <form onSubmit={handleUpdateReview}>
+            <h2 className="text-4xl font-bold my-10">You are about to order {}</h2>
+            <h2 className="text-3xl font-bold my-10">{}</h2>
            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
 
            <input type="text" name='firstName' placeholder="First Name" className="input input-bordered w-full " />
@@ -71,4 +43,4 @@ const ReviewPage = ({image}) => {
     );
 };
 
-export default ReviewPage;
+export default UpdateReview;

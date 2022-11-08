@@ -8,6 +8,7 @@ import DetailsPage from "../Pages/Home/DetailsPage/DetailsPage";
 import Home from "../Pages/Home/Home";
 import Services from "../Pages/Home/Services/Services";
 import MyReview from "../Pages/MyReview/MyReview";
+import UpdateReview from "../Pages/MyReview/UpdateReview";
 import PrivateRouter from '../Router/PrivateRouter'
 
 export const router=createBrowserRouter([
@@ -49,7 +50,12 @@ export const router=createBrowserRouter([
                 path:'/detailspage/:id',
                 loader:({params})=>fetch(`http://localhost:4000/services/${params.id}`),
                 element: <DetailsPage />
+            },
+            {
+                path:'/update/:id',
+                loader:({params})=>fetch(`http://localhost:4000/review/${params.id}`),
+                element: <PrivateRouter><UpdateReview /></PrivateRouter> 
             }
          ]
-    }
+    } 
 ])

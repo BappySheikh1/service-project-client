@@ -1,7 +1,10 @@
 import React from 'react';
+import useTitle from '../../Hooks/useTitle';
+
 import './Blogs.css'
 
 const Blogs = () => {
+   useTitle('Blogs')
     return (
         <div>
             <div className='bg-black text-white rounded-lg my-3'>

@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import image from '../../../assets/login.svg'
+import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
-   
+    useTitle('Register') 
     const {createUser,userVerification,userProfileUpdate}=useContext(AuthContext)
     const [error,setError]=useState('')
 

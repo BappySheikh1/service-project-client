@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import { json, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import logo from "../../../assets/login.svg"
+import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
+  useTitle('Login') 
     const {logInUser,userForgetPassword}=useContext(AuthContext)
     const [error , setError]=useState('')
     const [userEmail,setUserEmail]=useState('')
@@ -27,6 +29,7 @@ const Login = () => {
             const currentUser={
               email: user.email
             }
+            console.log(currentUser);
             //get jwt token
             fetch('http://localhost:4000/jwt',{
              method: "Post",

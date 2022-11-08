@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import {AuthContext} from '../../../Contexts/AuthProvider'
+import useTitle from '../../../Hooks/useTitle';
 import ReviewPage from './ReviewPage';
 
 const DetailsPage = () => {
+    useTitle('Details')
     const {user}=useContext(AuthContext)
     const {title,description,image,price,rating,_id}=useLoaderData()
     return (
@@ -35,7 +37,8 @@ const DetailsPage = () => {
                             </>
                             :
                             <>
-                            <Link to='/login' className='text-4xl'>apni age log in korun tarpor review diben</Link>
+                            <p className='text-4xl underline'><Link to='/login' >Please login to add a review</Link> </p>
+                            
                             </>
                         }
                     </div>
