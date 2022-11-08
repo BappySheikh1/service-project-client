@@ -4,7 +4,7 @@ import CollectionCard from './CollectionCard';
 const BestCollection = () => {
     const [collections ,setcollections ]=useState([])
     useEffect(()=>{
-      fetch('picture.json')
+      fetch('http://localhost:4000/pictures')
       .then(res => res.json())
       .then(data => setcollections(data))
     },[])

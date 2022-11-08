@@ -3,11 +3,11 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
 
 const PrivateRouter = ({children}) => {
-    const {user,loadding}=useContext(AuthContext)
+    const {user,loading}=useContext(AuthContext)
     const location =useLocation()
 
-    if(loadding){
-        return <p>Loadding...........</p>
+    if(loading){
+        return <p>Loading...........</p>
     }
 
     if(!user){
