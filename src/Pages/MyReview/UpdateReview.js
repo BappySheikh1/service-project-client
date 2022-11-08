@@ -1,20 +1,43 @@
 import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 const UpdateReview = () => {
-    const{user}=useContext(AuthContext)
-    const handleUpdateReview=()=>{
-
-    }
+    const {rating,_id}=useLoaderData()
     
+    const{user}=useContext(AuthContext)
+    const handleUpdateReview=(event)=>{
+        event.preventDefault();
+        const form =event.target
+        const name =`${form.firstName.value} ${form.lastName.value}`
+        const message =form.message.value;
+        // console.log(name,message);
+        const userInfo={
+            name: name,
+            message: message
+        }
+        fetch(`http://localhost:4000/review/${_id}`,{
+            method:"PUT",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(userInfo)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            // console.log(data);
+            if(data.modifiedCount > 0){
+                toast.success('User Update successful',{autoClose: 500})
+            }
+        })
+    }
+
     return (
         <div className='my-5'>
-            <div className=''>
-                <img src='' alt="" className='w-full rounded-md h-[400px] mb-32'/>
-            </div>
             
            <form onSubmit={handleUpdateReview}>
-            <h2 className="text-4xl font-bold my-10">You are about to order {}</h2>
+            <h2 className="text-4xl font-bold my-10">Update only text description & Name</h2>
             <h2 className="text-3xl font-bold my-10">{}</h2>
            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
 
@@ -22,7 +45,7 @@ const UpdateReview = () => {
            
            <input type="text" name='lastName' placeholder="Last Name" className="input input-bordered w-full " />
            
-           <input type="text" name='rating' placeholder="Your rating" className="input input-bordered w-full " required/>
+           <input type="text" name='rating' defaultValue={rating} placeholder="Your rating" className="input input-bordered w-full " required/>
            
            <input type="text" name='email' placeholder="Your email" defaultValue={user?.email} className="input input-bordered w-full " readOnly />
            </div>

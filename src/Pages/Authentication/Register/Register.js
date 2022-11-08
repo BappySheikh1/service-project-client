@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import image from '../../../assets/login.svg'
 import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
     useTitle('Register') 
-    const {createUser,userVerification,userProfileUpdate}=useContext(AuthContext)
+    const {createUser,userVerification,userProfileUpdate,logInWithGoogle}=useContext(AuthContext)
     const [error,setError]=useState('')
+    const navigate=useNavigate()
+    const location=useLocation()
+    let from = location.state?.from?.pathname || "/";
 
     const handleSubmit=event=>{
         event.preventDefault();
@@ -44,7 +47,18 @@ const Register = () => {
             setError(err.message)
         })
     }
-
+   
+    const handleUserLogInGoogle=()=>{
+      logInWithGoogle()
+      .then(result =>{
+        const user =result.user
+        console.log(user);
+        Navigate(from, { replace: true });
+      })
+      .catch(err=>{
+        setError(err.message)
+      })
+    }
     // const handleUserVerify=()=>{
     //     userVerification()
     //     .then(()=>{
@@ -56,7 +70,7 @@ const Register = () => {
     // }
 
     return (
-        <div className="hero w-full my-20">
+        <div className="hero w-full my-20 mx-auto">
         <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
           <div className="text-center lg:text-left">
            <img src={image} className='w-3/4' alt="" />
@@ -99,7 +113,7 @@ const Register = () => {
             </form>
             <div className='text-center my-5'>
                <p className='text-xl mb-3'>Or Sign Up with</p>
-               <button className='btn btn-primary text-white font-semibold mr-2'>Google Log In</button>
+               <button onClick={handleUserLogInGoogle} className='btn btn-primary text-white font-semibold mr-2'>Google Log In</button>
                  
                 <p className='p-5'>Already have an account? <Link className='text-orange-600 font-bold text-center ' to='/login'>Log In</Link></p>
             </div>

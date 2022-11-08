@@ -25,3 +25,4 @@ Tailwind Css Components ->
 ## Others Link
 React Icon ->[Link](https://react-icons.github.io/react-icons/)
 react toastify ->[Link](https://www.npmjs.com/package/react-toastify)
+Lottie react ->[Link](https://www.npmjs.com/package/lottie-react)

@@ -1,4 +1,4 @@
-import {getAuth,createUserWithEmailAndPassword ,signInWithEmailAndPassword,sendEmailVerification, updateProfile,sendPasswordResetEmail,signOut,onAuthStateChanged } from 'firebase/auth'
+import {getAuth,createUserWithEmailAndPassword ,signInWithEmailAndPassword,sendEmailVerification, updateProfile,sendPasswordResetEmail,signOut,onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.config';
 
@@ -19,6 +19,12 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     } 
+
+    // login with google
+    const googleProvider= new GoogleAuthProvider()
+    const logInWithGoogle=()=>{
+        return signInWithPopup(auth,googleProvider)
+    }
     
     // User email verification
     const userVerification=()=>{
@@ -57,6 +63,7 @@ const AuthProvider = ({children}) => {
         userProfileUpdate,
         userForgetPassword,
         userLogOut,
+        logInWithGoogle
     }
     return (
         <AuthContext.Provider value={authInfo}>

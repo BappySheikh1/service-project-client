@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { json, Link, useLocation, useNavigate } from 'react-router-dom';
+import {  Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
-import logo from "../../../assets/login.svg"
+import Lottie from "lottie-react";
+import logo from "../../../assets/125469-meditating-panda.json"
 import useTitle from '../../../Hooks/useTitle';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   useTitle('Login') 
-    const {logInUser,userForgetPassword}=useContext(AuthContext)
+    const {logInUser,userForgetPassword,logInWithGoogle}=useContext(AuthContext)
     const [error , setError]=useState('')
     const [userEmail,setUserEmail]=useState('')
     const navigate=useNavigate()
@@ -25,7 +27,7 @@ const Login = () => {
             const user=result.user
             // console.log(user);
             form.reset();
-          
+            setError('')
             const currentUser={
               email: user.email
             }
@@ -58,18 +60,30 @@ const Login = () => {
     const handleUserEmailForget=()=>{
         userForgetPassword(userEmail)
         .then(()=>{
-
+          toast.success('forget successfully please check your email',{autoClose:500})
         })
         .catch(err=>{
             setError(err.message)
         })
     }
 
+    const handleUserLogInGoogle=()=>{
+      logInWithGoogle()
+      .then(result =>{
+        const user =result.user
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch(err=>{
+        setError(err.message)
+      })
+    }
+
     return (
-        <div className="hero w-full my-20">
+        <div className="hero w-full my-20 mx-auto">
   <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
     <div className="text-center lg:text-left">
-     <img src={logo} className='w-3/4' alt="" />
+    <Lottie animationData={logo} loop={true} />
       
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -97,7 +111,7 @@ const Login = () => {
       </form>
       <div className='text-center my-5'>
                <p className='text-xl mb-3'>Or Sign Up with</p>
-                 <button className='btn btn-primary text-white font-semibold mr-2'>Google Log In</button>
+                 <button onClick={handleUserLogInGoogle} className='btn btn-primary text-white font-semibold mr-2'>Google Log In</button>
                  <p className='p-5'>New to photo service <Link className='text-orange-600 font-bold text-center ' to='/register'>Sign Up</Link></p>
             </div>
       {/* <SocialLogIn /> */}
