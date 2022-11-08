@@ -21,14 +21,29 @@ const AddService = () => {
         const message =form.message.value;
 
     
-      const userInformation={
+      const userInfo={
        title: title,
-       photoURL: photoURL,
+       image: photoURL,
        price : price,
        rating : rating,
-       message: message
+       description: message
       }
-      console.log(userInformation);
+      
+
+      fetch('http://localhost:4000/servicePost',{
+        method:"POST",
+        headers:{
+          "content-type" : "application/json"
+        },
+        body: JSON.stringify(userInfo)
+    })
+    .then(res => res.json())
+    .then(data =>{
+        // console.log(data);
+        if(data.acknowledged){
+            return toast.success('Add Services added successfully',{autoClose: 500})
+        }
+    })
 
     }
 
