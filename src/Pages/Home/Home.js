@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner";
 import ContractUs from './Contract/ContractUs';
 import ServiceCard from './ServiceCard/ServiceCard';
 import {  FaArrowRight } from 'react-icons/fa';
+import BestCollection from './BestCollection/BestCollection';
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
            <Link to='/services'><button className="btn btn-outline btn-secondary font-bold "> See All  <FaArrowRight  className='ml-5 text-black '/></button></Link> 
             </div>
             <ContractUs />
+            <BestCollection />
         </div>
     );
 };

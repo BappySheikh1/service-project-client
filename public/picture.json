@@ -1,0 +1,32 @@
+[
+    {
+      "img": "https://i.ibb.co/wMpQCZz/bee-eaters-with-multicolored-feathers-sitting-tree-branch.jpg",
+      "name": "The Bird",
+      "price": 400
+    },
+    {
+      "img": "https://i.ibb.co/xjNFBrV/amazing-bengal-tiger-nature.jpg",
+      "name": "Bangla Tiger",
+      "price": 300
+    },
+    {
+      "img": "https://i.ibb.co/7GkWqyX/beautiful-shot-forested-hills-cloudy-sky.jpg",
+      "name": "The sky and the Mountain",
+      "price": 350
+    },
+    {
+      "img": "https://i.ibb.co/Xks4Wdk/closeup-shot-two-bee-eaters-perched-tree-branch.jpg",
+      "name": "Pair of birds",
+      "price": 440
+    },
+    {
+      "img": "https://i.ibb.co/phS3N88/black-weimaraner-dog-garden-surrounded-by-greenery.jpg",
+      "name": "Beautiful dog",
+      "price": 200
+    },
+    {
+      "img": "https://i.ibb.co/F3ZwR7T/butterfly-flower.jpg",
+      "name": "Butterfly",
+      "price": 500
+    }
+  ]
