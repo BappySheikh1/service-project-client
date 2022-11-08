@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Banner from "./Banner/Banner";
+import ContractUs from './Contract/ContractUs';
 import ServiceCard from './ServiceCard/ServiceCard';
-
+import {  FaArrowRight } from 'react-icons/fa';
 
 
 const Home = () => {
@@ -17,8 +18,9 @@ const Home = () => {
                }
             </div>
             <div className='text-center mb-11'>
-           <Link to='/services'><button className="btn btn-outline btn-secondary font-bold "> See All  </button></Link> 
+           <Link to='/services'><button className="btn btn-outline btn-secondary font-bold "> See All  <FaArrowRight  className='ml-5 text-black '/></button></Link> 
             </div>
+            <ContractUs />
         </div>
     );
 };

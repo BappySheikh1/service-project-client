@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {  FaArrowRight } from 'react-icons/fa';
+
 
 const ServiceCard = ({service}) => {
     const {title,description,image,price,rating,_id}=service
@@ -23,7 +25,7 @@ const ServiceCard = ({service}) => {
             }    
     </p>
     <div className="card-actions justify-end">
-    <Link to={`/detailspage/${_id}`} ><button className="btn btn-primary">Details</button></Link>  
+    <Link to={`/detailspage/${_id}`} ><button className="btn btn-primary">Details <FaArrowRight className='ml-5 font-bold text-black'/></button></Link>  
     </div>
   </div>
 </div>
