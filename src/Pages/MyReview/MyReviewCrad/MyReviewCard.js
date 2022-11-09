@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const MyReviewCard = ({review,reviewer,setReviewer}) => {
-    const {description,image,email,user_name,_id,rating}=review
+    const {description,image,email,user_name,_id,rating,time}=review
      
-    
+    console.log(review);
     const handleDelete=(_id)=>{
         const agree=window.confirm(`Are your sure delete this element ${_id}`)
         if(agree){
-            fetch(`https://service-project-server.vercel.app/review/${_id}`,{
+            fetch(`http://localhost:4000/review/${_id}`,{
                 method:"DELETE"
             })
             .then(res => res.json())
@@ -33,12 +33,15 @@ const MyReviewCard = ({review,reviewer,setReviewer}) => {
              <figure><img style={{height:'160px'}}  className='rounded-xl pl-5 w-full h-full' src={image}  alt=""/></figure>
              <div className="card-body">
                <h2 className="card-title">Name: {user_name}</h2>
+               <p>{time}</p>
                <h4 className="">Email: {email}</h4>
+               <div className='flex-wrap'>
                 <p>Description: {description}</p>
+               </div>
              <div className="card-actions justify-end mt-4">
                 <p className='text-lg'>rating: {rating}</p>
-             <button className="btn btn-warning font-bold" onClick={()=>handleDelete(_id)}>Delete</button>
-             <Link to={`/update/${_id}`}><button className="btn btn-warning font-bold" >Update</button></Link>
+                <button className="btn btn-warning text-white bg-red-600 font-bold" onClick={()=>handleDelete(_id)}>x</button>
+                 <Link to={`/update/${_id}`}><button className="btn btn-warning bg-green-700 text-white font-bold" >Update</button></Link>
             </div>
          </div>
          </div>

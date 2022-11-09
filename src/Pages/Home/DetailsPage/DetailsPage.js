@@ -26,7 +26,7 @@ const DetailsPage = () => {
                      <br />
                   <div className='flex justify-between items-center'>
                      <p className="text-lg font-bold">Price: ${price}</p>
-                     <p className="text-lg font-bold flex items-center">Rating: <FaStar className='text-yellow-400 mx-1' /> {rating.number}</p>
+                     <p className="text-lg font-bold flex items-center">Rating: <FaStar className='text-yellow-400 mx-1' /> {rating.number ? rating.number : rating}</p>
               
                   </div>
                    <div className="card-actions justify-end">

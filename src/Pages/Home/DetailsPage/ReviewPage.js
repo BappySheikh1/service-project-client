@@ -16,6 +16,7 @@ const ReviewPage = ({image}) => {
         }
         const photoURL =form.photoURL.value;
         const message =form.message.value;
+        const date = new Date();
 
       console.log(name,email,rating ,message);
       const userInformation={
@@ -23,9 +24,10 @@ const ReviewPage = ({image}) => {
         email : email,
         rating : rating ,
         description: message,
-        image: photoURL
+        image: photoURL,
+        time :date.toLocaleString()
       }
-      fetch('https://service-project-server.vercel.app/review',{
+      fetch('http://localhost:4000/review',{
         method:'POST',
         headers:{
             "content-type":'application/json'

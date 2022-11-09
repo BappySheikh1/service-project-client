@@ -12,14 +12,16 @@ const MyReview = () => {
    useEffect(()=>{
     fetch(`http://localhost:4000/review?email=${user?.email}`,{
       headers:{
-        authorization: `Bearer ${localStorage.getItem('tokenjWt')}`
+        'Content-type':"application/json",
+        authorization: `Bearer ${localStorage?.getItem('tokenjWt')}`
       }
+     
     })
     .then(res => {
-        if(res.status === 401 || res.status === 403){
-        //   return userLogOut()
+        if(res?.status === 401 || res?.status === 403){
+          return userLogOut()
         }
-        return  res.json()
+        return  res?.json()
     })
     .then(data => {
         setReviewer(data)
@@ -33,11 +35,11 @@ const MyReview = () => {
         <div>
             <h2 className="text-4xl font-semibold my-5">There is your review: {reviewer.length}</h2>
             {
-                reviewer.length === 0 && <p className='text-3xl font-semibold'>No reviews were added <Link to='/services' className='underline text-red-700'>Please added Review</Link></p>
+                reviewer?.length === 0 && <p className='text-2xl font-semibold'>No reviews were added <Link to='/services' className='underline text-red-700'>Please added Review</Link></p>
             }
-            <div className='grid md:grid-cols-2 grid-cols-1 gap-6 my-20 mx-20'>
+            <div className='grid  grid-cols-1 gap-6 my-20 mx-20'>
             {
-                reverseArray.map(review => <MyReviewCard key={review._id} review={review} setReviewer={setReviewer} reviewer={reviewer}/>)
+                reverseArray?.map(review => <MyReviewCard key={review?._id} review={review} setReviewer={setReviewer} reviewer={reviewer}/>)
             }
             </div>
         </div>

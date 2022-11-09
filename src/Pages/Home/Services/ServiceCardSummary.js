@@ -20,7 +20,7 @@ const ServiceCardSummary = ({service}) => {
               <h2 className="card-title">{title}</h2>
               <div className='flex justify-between items-center'>
                <p className='text-xl font-semibold'>Price: ${price}</p>
-               <p className='text-xl font-semibold flex items-center'>Rating: <FaStar className='text-yellow-400 mx-1' />  {rating.number}</p>
+               <p className='text-xl font-semibold flex items-center'>Rating: <FaStar className='text-yellow-400 mx-1' />  {rating.number ? rating.number : rating}</p>
               </div>
              <p className='text-xl f'>
               {

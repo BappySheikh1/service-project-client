@@ -6,7 +6,7 @@ import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
     useTitle('Register') 
-    const {createUser,userVerification,userProfileUpdate,logInWithGoogle}=useContext(AuthContext)
+    const {createUser,loading,userProfileUpdate,logInWithGoogle}=useContext(AuthContext)
     const [error,setError]=useState('')
     const navigate=useNavigate()
     const location=useLocation()
@@ -27,6 +27,9 @@ const Register = () => {
             console.log(user);
             form.reset();
             handleNamePhotoUpdate(name,photoURL);
+            if(loading){
+              return <button className="btn loading">loading</button>
+            }
         })
         .catch(err =>{
             console.log(err);

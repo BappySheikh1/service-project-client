@@ -4,7 +4,7 @@ import CollectionCard from './CollectionCard';
 const BestCollection = () => {
     const [collections ,setcollections ]=useState([])
     useEffect(()=>{
-      fetch('https://service-project-server.vercel.app/pictures')
+      fetch('http://localhost:4000/pictures')
       .then(res => res.json())
       .then(data => setcollections(data))
     },[])
