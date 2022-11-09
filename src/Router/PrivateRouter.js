@@ -7,7 +7,9 @@ const PrivateRouter = ({children}) => {
     const location =useLocation()
 
     if(loading){
-        return <button className="btn loading">loading</button>
+        return <div className='text-center my-20'>
+            <button className="btn loading">loading</button>
+        </div>
     }
 
     if(!user){
@@ -16,4 +18,4 @@ const PrivateRouter = ({children}) => {
     return children ;
 };
 
-export default PrivateRouter;
+export default PrivateRouter; 

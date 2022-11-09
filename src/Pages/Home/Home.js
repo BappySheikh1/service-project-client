@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Banner from "./Banner/Banner";
 import ContractUs from './Contract/ContractUs';
@@ -7,12 +7,32 @@ import {  FaArrowRight } from 'react-icons/fa';
 import BestCollection from './BestCollection/BestCollection';
 import useTitle from '../../Hooks/useTitle';
 
-
+ 
 
 const Home = () => {
     const services=useLoaderData()
    useTitle("Home")
+   const [servicesLimit,setServicesLimit]=useState([])
+  const [dataLoading,setDataLoading]=useState(true)
+   useEffect(()=>{
+    fetch('http://localhost:4000/services/limit')
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data);
+        setServicesLimit(data)
+        setDataLoading(false)
+        
+    })
+   },[])
     return (
+        <div>
+        {
+            dataLoading ?
+            
+            <div className='text-center my-20'>
+              <button className="btn loading">loading</button>
+            </div>
+            :
         <div>
             <Banner />
             <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10'> 
@@ -26,6 +46,9 @@ const Home = () => {
             <ContractUs />
             <BestCollection />
         </div>
+    
+    }
+    </div>
     );
 };
 

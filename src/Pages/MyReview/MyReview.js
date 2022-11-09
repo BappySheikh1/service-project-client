@@ -33,6 +33,7 @@ const MyReview = () => {
 
     return (
         <div>
+              <div>
             <h2 className="text-4xl font-semibold my-5">There is your review: {reviewer.length}</h2>
             {
                 reviewer?.length === 0 && <p className='text-2xl font-semibold'>No reviews were added <Link to='/services' className='underline text-red-700'>Please added Review</Link></p>
@@ -42,6 +43,7 @@ const MyReview = () => {
                 reverseArray?.map(review => <MyReviewCard key={review?._id} review={review} setReviewer={setReviewer} reviewer={reviewer}/>)
             }
             </div>
+              </div>
         </div>
     );
 };
