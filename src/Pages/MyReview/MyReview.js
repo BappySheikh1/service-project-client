@@ -10,10 +10,14 @@ const MyReview = () => {
    const {user,userLogOut}=useContext(AuthContext)
 
    useEffect(()=>{
-    fetch(`https://service-project-server.vercel.app/review?email=${user?.email}`)
+    fetch(`http://localhost:4000/review?email=${user?.email}`,{
+      headers:{
+        authorization: `Bearer ${localStorage.getItem('tokenjWt')}`
+      }
+    })
     .then(res => {
         if(res.status === 401 || res.status === 403){
-          return userLogOut()
+        //   return userLogOut()
         }
         return  res.json()
     })

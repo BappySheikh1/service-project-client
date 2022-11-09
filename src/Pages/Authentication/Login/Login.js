@@ -5,6 +5,7 @@ import Lottie from "lottie-react";
 import logo from "../../../assets/125469-meditating-panda.json"
 import useTitle from '../../../Hooks/useTitle';
 import { toast } from 'react-toastify';
+import { setAuthToken } from '../../../Utilitis/TokenJWT';
 
 const Login = () => {
   useTitle('Login') 
@@ -27,16 +28,31 @@ const Login = () => {
             const user=result.user
             // console.log(user);
             form.reset();
-            setError('')
-           
-    
-            //get jwt token
-          
-           
-              // localStorage.setItem('JWTtoken',data.token)
-              navigate(from, { replace: true });
+            setError('');
+            setAuthToken(user);
+            navigate(from, { replace: true });
+          //   const currentUser = {
+          //     email: user.email
+          // }
 
-           
+          // console.log(currentUser);
+
+          // get jwt token
+          // fetch('http://localhost:4000/jwt', {
+          //     method: 'POST',
+          //     headers: {
+          //         'content-type': 'application/json'
+          //     },
+          //     body: JSON.stringify(currentUser)
+          //   })
+          //     .then(res => res.json())
+          //     .then(data => {
+          //         console.log(data);
+          //         // local storage is the easiest but not the best place to store jwt token
+          //         localStorage.setItem('tokenjWt', data.token);
+          //         // navigate(from, { replace: true });
+          //     });
+
         })
         .catch(err =>{
             console.log(err);

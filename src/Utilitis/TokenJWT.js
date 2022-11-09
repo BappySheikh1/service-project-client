@@ -1,8 +1,10 @@
+
 export const setAuthToken =(user)=>{
+  
     const currentUser ={
         email: user.email
     }
-    fetch('https://service-project-server.vercel.app/jwt',{
+    fetch('http://localhost:4000/jwt',{
         method: "POST",
         headers:{
           'Content-type':"application/json"
@@ -13,7 +15,7 @@ export const setAuthToken =(user)=>{
        .then(data => {
         console.log(data);
         // local storage is not the best place to store jwt token
-        localStorage.setItem('wildPhotoGrapher',data.token)
+        localStorage.setItem('tokenjWt',data.token)
     
        })
     
