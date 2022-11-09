@@ -6,7 +6,7 @@ import logo from "../../../assets/125469-meditating-panda.json"
 import useTitle from '../../../Hooks/useTitle';
 import { toast } from 'react-toastify';
 import { setAuthToken } from '../../../Utilitis/TokenJWT';
-
+ 
 const Login = () => {
   useTitle('Login') 
     const {logInUser,userForgetPassword,logInWithGoogle,loading}=useContext(AuthContext)
@@ -50,7 +50,7 @@ const Login = () => {
           toast.success('forget successfully please check your email',{autoClose:500})
         })
         .catch(err=>{
-            setError(err.message)
+            // setError(err.message)
         })
     }
 
@@ -58,11 +58,13 @@ const Login = () => {
       logInWithGoogle()
       .then(result =>{
         const user =result.user
-        console.log(user);
+        // console.log(user);
+        setAuthToken(user)
         navigate(from, { replace: true });
       })
       .catch(err=>{
-        setError(err.message)
+        // setError(err.message)
+        console.log(err);
       })
     }
  

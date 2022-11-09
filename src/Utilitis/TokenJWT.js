@@ -4,7 +4,7 @@ export const setAuthToken =(user)=>{
     const currentUser ={
         email: user?.email
     }
-    fetch('http://localhost:4000/jwt',{
+    fetch('https://service-project-server-bappysheikh1.vercel.app/jwt',{
         method: "POST",
         headers:{
           'Content-type':"application/json"

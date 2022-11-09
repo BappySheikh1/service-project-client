@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
-import { AuthContext } from '../../Contexts/AuthProvider';
 import useTitle from '../../Hooks/useTitle'
 import image from '../../assets/pagla.jpg'
 
 const AddService = () => {
     useTitle('Add Service')
-    const {user}=useContext(AuthContext)
+    
    
     const handleAddService=event=>{
         event.preventDefault();
@@ -30,7 +29,7 @@ const AddService = () => {
       }
       
 
-      fetch('http://localhost:4000/servicePost',{
+      fetch('https://service-project-server-bappysheikh1.vercel.app/servicePost',{
         method:"POST",
         headers:{
           "content-type" : "application/json"
@@ -49,7 +48,7 @@ const AddService = () => {
     }
 
     return (
-        <div className='my-5'>
+        <div className='my-5 lg:px-20'>
         <div className=''>
             <img src={image} alt="" className='w-full rounded-md h-[400px] mb-32'/>
         </div>

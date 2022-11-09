@@ -10,12 +10,12 @@ import useTitle from '../../Hooks/useTitle';
  
 
 const Home = () => {
-    const services=useLoaderData()
+    // const services=useLoaderData()
    useTitle("Home")
    const [servicesLimit,setServicesLimit]=useState([])
   const [dataLoading,setDataLoading]=useState(true)
    useEffect(()=>{
-    fetch('http://localhost:4000/services/limit')
+    fetch('https://service-project-server-bappysheikh1.vercel.app/services/limit')
     .then(res => res.json())
     .then(data =>{
         console.log(data);
@@ -28,7 +28,7 @@ const Home = () => {
         <div>
         {
             dataLoading ?
-            
+
             <div className='text-center my-20'>
               <button className="btn loading">loading</button>
             </div>
@@ -37,7 +37,7 @@ const Home = () => {
             <Banner />
             <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10'> 
                {
-                services.map((service) => <ServiceCard key={service._id} service={service}/>)
+                servicesLimit.map((service) => <ServiceCard key={service._id} service={service}/>)
                }
             </div>
             <div className='text-center mb-11'>

@@ -10,7 +10,7 @@ const MyReview = () => {
    const {user,userLogOut}=useContext(AuthContext)
 
    useEffect(()=>{
-    fetch(`http://localhost:4000/review?email=${user?.email}`,{
+    fetch(`https://service-project-server-bappysheikh1.vercel.app/review?email=${user?.email}`,{
       headers:{
         'Content-type':"application/json",
         authorization: `Bearer ${localStorage?.getItem('tokenjWt')}`

@@ -13,7 +13,7 @@ const DetailsPage = () => {
     const {title,description,image,price,rating,_id}=useLoaderData()
     return (
         <div>
-            <div className="card lg:card-side bg-base-100 shadow-xl my-10">
+            <div className="card lg:card-side bg-base-100 shadow-xl  my-10">
                 <PhotoProvider>
                     <PhotoView src={image}>
                     <figure><img src={image} className='h-full w-full' alt=""/></figure>
@@ -36,7 +36,7 @@ const DetailsPage = () => {
             </div>
                {/* User Review */}
             <section>
-                  <h2 className="text-4xl font-bold my-10">Review Area</h2>
+                  <h2 className="text-4xl font-bold my-10 lg:pl-10">Review Area</h2>
                     <div className='mb-20'>
                         {
                             user ?

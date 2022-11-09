@@ -17,10 +17,11 @@ const UpdateReview = () => {
             name: name,
             message: message
         }
-        fetch(`http://localhost:4000/review/${_id}`,{
+        fetch(`https://service-project-server-bappysheikh1.vercel.app/review/${_id}`,{
             method:"PUT",
             headers:{
-                'content-type':'application/json'
+                'content-type':'application/json',
+                authorization: `Bearer ${localStorage?.getItem('tokenjWt')}`
             },
             body:JSON.stringify(userInfo)
         })
@@ -35,7 +36,7 @@ const UpdateReview = () => {
     }
 
     return (
-        <div className='my-5'>
+        <div className='my-5 lg:px-20'>
             
            <form onSubmit={handleUpdateReview}>
             <h2 className="text-4xl font-bold my-10">Update only text description & Name</h2>

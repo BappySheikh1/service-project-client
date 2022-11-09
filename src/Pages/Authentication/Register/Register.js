@@ -3,6 +3,7 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import image from '../../../assets/login.svg'
 import useTitle from '../../../Hooks/useTitle';
+import { setAuthToken } from '../../../Utilitis/TokenJWT';
 
 const Register = () => {
     useTitle('Register') 
@@ -19,7 +20,22 @@ const Register = () => {
         const photoURL =form.photoURL.value
         const email =form.email.value
         const password =form.password.value
-        console.log(name,photoURL,email,password);
+        // console.log(name,photoURL,email,password);
+          //  password validation start
+       if (!/(?=.{8,})/.test(password)) {
+        setError("password must be 8 character");
+        return;
+      }
+      if (!/(?=.*[a-zA-Z])/.test(password)) {
+        setError("password should have Upper letter!!");
+        return;
+      }
+      if (!/(?=.*[!#@$%&? "])/.test(password)) {
+        setError("password should have special character!!");
+        return;
+      }
+      setError('')
+    // password validation end
 
         createUser(email,password)
         .then(result =>{
@@ -55,8 +71,9 @@ const Register = () => {
       logInWithGoogle()
       .then(result =>{
         const user =result.user
-        console.log(user);
-        Navigate(from, { replace: true });
+        // console.log(user);
+        setAuthToken(user)
+        navigate(from, { replace: true });
       })
       .catch(err=>{
         setError(err.message)
@@ -109,7 +126,7 @@ const Register = () => {
                 </label>
                 <input type="password" placeholder="password" name='password' className="input input-bordered" required/>
               </div>
-              <p className='text-red-600'>{}</p>
+              <p className='text-red-600'>{error}</p>
               <div className="form-control mt-6">
                   <input className="btn btn-primary" type="submit" value='Sign Up' />
               </div>

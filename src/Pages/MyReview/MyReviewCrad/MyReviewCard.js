@@ -9,8 +9,11 @@ const MyReviewCard = ({review,reviewer,setReviewer}) => {
     const handleDelete=(_id)=>{
         const agree=window.confirm(`Are your sure delete this element ${_id}`)
         if(agree){
-            fetch(`http://localhost:4000/review/${_id}`,{
-                method:"DELETE"
+            fetch(`https://service-project-server-bappysheikh1.vercel.app/review/${_id}`,{
+                method:"DELETE",
+               headers :{
+                authorization: `Bearer ${localStorage?.getItem('tokenjWt')}`
+                }
             })
             .then(res => res.json())
             .then(data => {

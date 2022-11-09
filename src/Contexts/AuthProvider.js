@@ -43,6 +43,7 @@ const AuthProvider = ({children}) => {
     }
 
     const userLogOut=()=>{
+        localStorage.removeItem('tokenjWt')
         return signOut(auth)
     }
   

@@ -18,7 +18,7 @@ const ReviewPage = ({image}) => {
         const message =form.message.value;
         const date = new Date();
 
-      console.log(name,email,rating ,message);
+      // console.log(name,email,rating ,message);
       const userInformation={
         user_name: name,
         email : email,
@@ -27,7 +27,7 @@ const ReviewPage = ({image}) => {
         image: photoURL,
         time :date.toLocaleString()
       }
-      fetch('http://localhost:4000/review',{
+      fetch('https://service-project-server-bappysheikh1.vercel.app/review',{
         method:'POST',
         headers:{
             "content-type":'application/json'
@@ -36,7 +36,7 @@ const ReviewPage = ({image}) => {
       })
       .then(res =>res.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
         if(data.acknowledged){
             toast.success('Review is successfully added',{autoClose: 500})
         }
@@ -45,7 +45,7 @@ const ReviewPage = ({image}) => {
     }
 
     return (
-        <div className='my-5'>
+        <div className='my-5 lg:px-10'>
             <div className=''>
                 <img src={image} alt="" className='w-full rounded-md h-[400px] mb-32'/>
             </div>
