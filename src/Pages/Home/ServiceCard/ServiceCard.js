@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import {  FaArrowRight } from 'react-icons/fa';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { FaStar } from 'react-icons/fa';
+
 
 
 const ServiceCard = ({service}) => {
@@ -21,7 +23,7 @@ const ServiceCard = ({service}) => {
             <h2 className="card-title">{title}</h2>
             <div className='flex justify-between items-center'>
              <p className='text-xl font-semibold'>Price: ${price}</p>
-            <p className='text-xl font-semibold'>Rating: {rating.number}</p>
+            <p className='text-xl font-semibold flex items-center'>Rating: <FaStar className='text-yellow-400 mx-1' /> {rating.number}</p>
            </div>
         <p className='text-xl f'>
              {

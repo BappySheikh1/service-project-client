@@ -82,7 +82,7 @@ const AddService = () => {
        <textarea className="textarea textarea-bordered h-24 w-full " name='message' placeholder="Your message" required></textarea>
        </div>
 
-       <input type="submit" className='btn w-full text-white bg-purple-600 border-none hover:bg-purple-700' value='Please Review This Picture'  />
+       <input type="submit" className='btn w-full text-white bg-blue-600 border-none hover:bg-blue-700' value='Please Added Service'  />
        </form>
         </div>
     );

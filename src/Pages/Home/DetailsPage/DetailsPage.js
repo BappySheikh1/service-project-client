@@ -5,6 +5,7 @@ import useTitle from '../../../Hooks/useTitle';
 import ReviewPage from './ReviewPage';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { FaStar } from 'react-icons/fa';
 
 const DetailsPage = () => {
     useTitle('Details')
@@ -25,7 +26,7 @@ const DetailsPage = () => {
                      <br />
                   <div className='flex justify-between items-center'>
                      <p className="text-lg font-bold">Price: ${price}</p>
-                     <p className="text-lg font-bold">Rating: ${rating.number}</p>
+                     <p className="text-lg font-bold flex items-center">Rating: <FaStar className='text-yellow-400 mx-1' /> {rating.number}</p>
               
                   </div>
                    <div className="card-actions justify-end">
