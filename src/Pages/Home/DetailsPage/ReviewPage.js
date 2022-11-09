@@ -25,7 +25,7 @@ const ReviewPage = ({image}) => {
         description: message,
         image: photoURL
       }
-      fetch('http://localhost:4000/review',{
+      fetch('https://service-project-server.vercel.app/review',{
         method:'POST',
         headers:{
             "content-type":'application/json'
@@ -38,6 +38,7 @@ const ReviewPage = ({image}) => {
         if(data.acknowledged){
             toast.success('Review is successfully added',{autoClose: 500})
         }
+        form.reset()
       })
     }
 

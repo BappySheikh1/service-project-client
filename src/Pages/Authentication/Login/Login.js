@@ -28,25 +28,15 @@ const Login = () => {
             // console.log(user);
             form.reset();
             setError('')
-            const currentUser={
-              email: user.email
-            }
-            console.log(currentUser);
+           
+    
             //get jwt token
-            fetch('http://localhost:4000/jwt',{
-             method: "Post",
-             headers:{
-              'content-type':'application/json'
-             },
-             body: JSON.stringify(currentUser)
-            })
-            .then(res=> res.json())
-            .then(data =>{
-              // console.log(data);
-              localStorage.setItem('JWTtoken',data.token)
+          
+           
+              // localStorage.setItem('JWTtoken',data.token)
               navigate(from, { replace: true });
 
-            })
+           
         })
         .catch(err =>{
             console.log(err);
@@ -78,7 +68,7 @@ const Login = () => {
         setError(err.message)
       })
     }
-
+ 
     return (
         <div className="hero w-full my-20 mx-auto">
   <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">

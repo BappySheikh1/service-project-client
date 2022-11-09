@@ -30,7 +30,7 @@ const AddService = () => {
       }
       
 
-      fetch('http://localhost:4000/servicePost',{
+      fetch('https://service-project-server.vercel.app/servicePost',{
         method:"POST",
         headers:{
           "content-type" : "application/json"
@@ -41,8 +41,9 @@ const AddService = () => {
     .then(data =>{
         // console.log(data);
         if(data.acknowledged){
-            return toast.success('Add Services added successfully',{autoClose: 500})
+            return toast.success('service is added successfully',{autoClose: 500})
         }
+        form.reset();
     })
 
     }

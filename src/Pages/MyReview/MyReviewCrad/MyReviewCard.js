@@ -9,7 +9,7 @@ const MyReviewCard = ({review,reviewer,setReviewer}) => {
     const handleDelete=(_id)=>{
         const agree=window.confirm(`Are your sure delete this element ${_id}`)
         if(agree){
-            fetch(`http://localhost:4000/review/${_id}`,{
+            fetch(`https://service-project-server.vercel.app/review/${_id}`,{
                 method:"DELETE"
             })
             .then(res => res.json())
@@ -19,6 +19,7 @@ const MyReviewCard = ({review,reviewer,setReviewer}) => {
                     toast.success('Deleted Successfully!!!',{autoClose:500})
                     const remaining=reviewer.filter(re => re._id !== _id)
                     setReviewer(remaining)
+                    
                 }
             })
         }

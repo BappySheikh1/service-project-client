@@ -17,7 +17,7 @@ const UpdateReview = () => {
             name: name,
             message: message
         }
-        fetch(`http://localhost:4000/review/${_id}`,{
+        fetch(`https://service-project-server.vercel.app/review/${_id}`,{
             method:"PUT",
             headers:{
                 'content-type':'application/json'
@@ -30,6 +30,7 @@ const UpdateReview = () => {
             if(data.modifiedCount > 0){
                 toast.success('User Update successful',{autoClose: 500})
             }
+            form.reset();
         })
     }
 

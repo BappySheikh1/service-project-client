@@ -18,7 +18,7 @@ export const router=createBrowserRouter([
          children:[
             {
                 path:'/',
-                loader:()=>fetch('http://localhost:4000/services/limit'),
+                loader:()=>fetch('https://service-project-server.vercel.app/services/limit'),
                 element: <Home />
             },
             {
@@ -43,17 +43,17 @@ export const router=createBrowserRouter([
             },
             {
                 path:'/services',
-                loader:()=>fetch(`http://localhost:4000/services`),
+                loader:()=>fetch(`https://service-project-server.vercel.app/services`),
                 element: <Services />
             },
             {
                 path:'/detailspage/:id',
-                loader:({params})=>fetch(`http://localhost:4000/services/${params.id}`),
+                loader:({params})=>fetch(`https://service-project-server.vercel.app/services/${params.id}`),
                 element: <DetailsPage />
             },
             {
                 path:'/update/:id',
-                loader:({params})=>fetch(`http://localhost:4000/review/${params.id}`),
+                loader:({params})=>fetch(`https://service-project-server.vercel.app/review/${params.id}`),
                 element: <PrivateRouter><UpdateReview /></PrivateRouter> 
             }
          ]
