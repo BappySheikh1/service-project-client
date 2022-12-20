@@ -10,7 +10,7 @@ Firebase Authentication ->[Link](https://firebase.google.com/?gclid=CIKapKmQn_sC
 
 ## Context API
 Documentation Link[api] -> [Link](https://service-project-server-bappysheikh1.vercel.app/services)
-Documentation Link[`api/${id}`] -> [Link](`https://service-project-server-bappysheikh1.vercel.app//services/${params.id}`)
+Documentation Link[`api/${id}`] -> [Link](`https://service-project-server-bappysheikh1.vercel.app/services/${params.id}`)
 Documentation Link[api] -> [Link](https://service-project-server-bappysheikh1.vercel.app/pictures)
 
 ## React Router Dom v6.4 

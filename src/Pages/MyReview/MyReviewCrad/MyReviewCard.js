@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const MyReviewCard = ({review,reviewer,setReviewer}) => {
-    const {description,image,email,user_name,_id,rating,time}=review
+    const {description,image,email,user_name,_id,rating,time,}=review
      
-    // console.log(review);
+    console.log(review);
     const handleDelete=(_id)=>{
         const agree=window.confirm(`Are your sure delete this element ${_id}`)
         if(agree){

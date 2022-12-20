@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Contexts/AuthProvider';
@@ -18,6 +19,7 @@ const Header = () => {
    const menuItems=<>
     <li className='font-semibold'><Link to='/'>Home</Link></li>
     <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
+    
     {
       user?.uid ? 
       <>
@@ -54,9 +56,17 @@ const Header = () => {
  </ul>
 </div>
 <div className="navbar-end">
-    <Link to='/register'>
-    <button className="btn btn-warning ">Register</button>
-    </Link>
+    
+     {
+      user?.uid ? <>
+       <figure>
+      <img style={{borderRadius:'50%',width:'40px'}} src={user?.photoURL} alt="" />
+    </figure>
+      </>
+      : 
+      <> <FaUser /></>
+     }
+   
 
 </div>
 </div>
