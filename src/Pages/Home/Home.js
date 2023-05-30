@@ -7,6 +7,7 @@ import {  FaArrowRight } from 'react-icons/fa';
 import BestCollection from './BestCollection/BestCollection';
 import useTitle from '../../Hooks/useTitle';
 import AboutUs from './About/AboutUs';
+import Faq from './FAQ/Faq';
 
  
 
@@ -47,6 +48,7 @@ const Home = () => {
             <ContractUs />
             <BestCollection />
             <AboutUs />
+            <Faq/>
         </div>
     
     }
