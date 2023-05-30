@@ -8,10 +8,10 @@ const ContactUs = () => {
     
            <div className='lg:px-10 bg-black'>
             <div className=''>
-                <img src='' alt="" className='w-full rounded-md h-[200px] mb-32'/>
+                <img src='https://i.ibb.co/sqz3JQ7/pagla.jpg' alt="" className='w-full rounded-md h-[400px] mb-32'/>
             </div>
             
-           <div className='lg:flex justify-between mx-auto px-3'>
+           <div className='lg:flex justify-between mx-auto px-3 lg:pb-16'>
             {/* section -1 */}
             <div className='md:w-1/3 mx-auto mb-4'>
                  <h1 className='text-white text-2xl font-semibold mb-5'>Contact Info :</h1>

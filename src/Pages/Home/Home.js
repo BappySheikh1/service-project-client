@@ -8,6 +8,7 @@ import BestCollection from './BestCollection/BestCollection';
 import useTitle from '../../Hooks/useTitle';
 import AboutUs from './About/AboutUs';
 import Faq from './FAQ/Faq';
+import BlogCard from '../Blogs/BlogCard';
 
  
 
@@ -28,6 +29,8 @@ const Home = () => {
    },[])
     return (
         <div>
+          <Banner />
+
         {
             dataLoading ?
 
@@ -35,8 +38,7 @@ const Home = () => {
               <button className="btn loading">loading</button>
             </div>
             :
-        <div>
-            <Banner />
+        <div>         
             <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10'> 
                {
                 servicesLimit.map((service) => <ServiceCard key={service._id} service={service}/>)
@@ -46,12 +48,12 @@ const Home = () => {
            <Link to='/services'><button className="btn btn-outline btn-secondary font-bold "> See All  <FaArrowRight  className='ml-5 text-black '/></button></Link> 
             </div>
             <BestCollection />
-            <AboutUs />
+        </div>
+    }
+           <AboutUs />
             <Faq/>
             <ContractUs />
-        </div>
-    
-    }
+            <BlogCard />
     </div>
     );
 };
