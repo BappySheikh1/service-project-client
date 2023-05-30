@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
     return (
@@ -10,7 +11,7 @@ const AboutUs = () => {
       <h3 className="text-xl font-bold">ABOUT US</h3>
       <h1 className='text-4xl my-2 font-semibold'>PHOTOGRAPHY IS GREAT</h1>
       <p className="py-2 text-xl">Photography is like a moment, an instant. You need a half-second to get the photo. So it's good to capture people when they are themselves.I became passionate about design filmmaking when I graduated from UCLA, and one of the things I always wanted to do was shoot really high quality film, so I got into time-lapse photography - so that means when you shoot a flower.</p>
-      <button className="btn btn-primary my-2"><a href="#contact">Contact Us</a></button>
+      <button className="btn btn-primary my-2"><Link to="/contact">Contact Us</Link></button>
     </div>
   </div>
 </div>

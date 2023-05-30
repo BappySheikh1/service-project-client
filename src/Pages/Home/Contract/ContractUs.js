@@ -6,7 +6,7 @@ import img3 from '../../../assets/location_icon.png'
 
 const ContractUs = () => {
     return (
-        <div id='contact' className='w-full h-64 bg-black my-20 rounded-lg text-white flex justify-around flex-col md:flex-row items-center'>
+        <div  className='w-full h-64 bg-black my-20 rounded-lg text-white flex justify-around flex-col md:flex-row items-center'>
 
             <div className='flex items-center'>           
              <div>

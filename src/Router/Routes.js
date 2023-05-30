@@ -10,6 +10,7 @@ import Services from "../Pages/Home/Services/Services";
 import MyReview from "../Pages/MyReview/MyReview";
 import UpdateReview from "../Pages/MyReview/UpdateReview";
 import PrivateRouter from '../Router/PrivateRouter'
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 export const router=createBrowserRouter([
     {
@@ -43,6 +44,10 @@ export const router=createBrowserRouter([
             {
                 path:'/services',
                 element: <Services />
+            },
+            {
+                path:'/contact',
+                element: <ContactUs />
             },
             {
                 path:'/detailspage/:id',

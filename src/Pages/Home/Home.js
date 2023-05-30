@@ -45,10 +45,10 @@ const Home = () => {
             <div className='text-center mb-11'>
            <Link to='/services'><button className="btn btn-outline btn-secondary font-bold "> See All  <FaArrowRight  className='ml-5 text-black '/></button></Link> 
             </div>
-            <ContractUs />
             <BestCollection />
             <AboutUs />
             <Faq/>
+            <ContractUs />
         </div>
     
     }
