@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Banner from "./Banner/Banner";
 import ContractUs from './Contract/ContractUs';
 import ServiceCard from './ServiceCard/ServiceCard';
 import {  FaArrowRight } from 'react-icons/fa';
 import BestCollection from './BestCollection/BestCollection';
 import useTitle from '../../Hooks/useTitle';
+import AboutUs from './About/AboutUs';
 
  
 
@@ -45,6 +46,7 @@ const Home = () => {
             </div>
             <ContractUs />
             <BestCollection />
+            <AboutUs />
         </div>
     
     }

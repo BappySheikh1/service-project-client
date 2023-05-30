@@ -17,6 +17,7 @@ const UpdateReview = () => {
             name: name,
             message: message
         }
+        
         fetch(`https://service-project-server-bappysheikh1.vercel.app/review/${_id}`,{
             method:"PUT",
             headers:{
