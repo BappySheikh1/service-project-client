@@ -9,6 +9,7 @@ import useTitle from '../../Hooks/useTitle';
 import AboutUs from './About/AboutUs';
 import Faq from './FAQ/Faq';
 import BlogCard from '../Blogs/BlogCard';
+import CheckoutService from './CheckoutService/CheckoutService';
 
  
 
@@ -51,9 +52,10 @@ const Home = () => {
         </div>
     }
            <AboutUs />
-            <Faq/>
+           <CheckoutService />
             <ContractUs />
             <BlogCard />
+            <Faq/>
     </div>
     );
 };

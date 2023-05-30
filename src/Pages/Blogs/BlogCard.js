@@ -23,10 +23,15 @@ const BlogCard = () => {
         },
     ]
     return (
+        <div>
+            <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">OUR BLOGS</p>
+		<h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">GET NEW UPDATES</h2>
+        
         <div className='my-20 gap-4 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             {
                 blogData.map((blog,i)=> <BlogMapCard key={i} blog={blog} />)
             }
+        </div>
         </div>
     );
 };
