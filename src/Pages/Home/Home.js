@@ -10,6 +10,7 @@ import AboutUs from './About/AboutUs';
 import Faq from './FAQ/Faq';
 import BlogCard from '../Blogs/BlogCard';
 import CheckoutService from './CheckoutService/CheckoutService';
+import Feedback from './Testimonials/Feedback';
 
  
 
@@ -53,6 +54,7 @@ const Home = () => {
     }
            <AboutUs />
            <CheckoutService />
+           <Feedback />
             <ContractUs />
             <BlogCard />
             <Faq/>
