@@ -2,11 +2,13 @@ import React from 'react';
 import useTitle from '../../Hooks/useTitle';
 
 import './Blogs.css'
+import BlogCard from './BlogCard';
 
 const Blogs = () => {
    useTitle('Blogs')
     return (
         <div>
+            <BlogCard />
             <div className='bg-black text-white rounded-lg my-3'>
                 <div className='w-1/2 mx-auto p-3 color-change'>
                    <h3 className='text-4xl font-semibold'>Question-1: Difference between SQL and NoSQL</h3>
